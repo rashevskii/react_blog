@@ -1,9 +1,10 @@
 import React from 'react'
-import classes from './MyButton.module.css'
+import cl from './MyButton.module.css'
 
 const MyButton = ({children, ...props}) => {
+  const classes = props.currentPage ? (cl.myBtn + " " + cl.pageCurrent) : cl.myBtn
   return (
-    <button {...props} className={classes.myBtn}>{children}</button>
+    <button {...props} className={classes}>{children}</button>
   )
 }
 
